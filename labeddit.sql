@@ -1,4 +1,4 @@
--- Active: 1695302297097@@127.0.0.1@3306
+-- Active: 1695313569184@@127.0.0.1@3306
 
 
 CREATE TABLE
@@ -9,12 +9,6 @@ CREATE TABLE
         password TEXT NOT NULL,
         created_at TEXT DEFAULT (DATETIME ()) NOT NULL
     );
-
-INSERT INTO users (id, nick, email, password, created_at)
-VALUES
-    ('1', 'usuario1', 'usuario1@email.com', 'senha123', DATETIME('now')),
-    ('2', 'usuario2', 'usuario2@email.com', 'outrasenha456', DATETIME('now'));
-
 
 SELECT * FROM users;
 
@@ -28,12 +22,6 @@ CREATE TABLE
         created_at TEXT DEFAULT (DATETIME ()) NOT NULL,
         FOREIGN KEY (creator_id) REFERENCES users (id)
     );
-
-INSERT INTO posts (id, creator_id, content, likes, dislikes, created_at)
-VALUES
-    ('post1', '1', 'Conteúdo do primeiro post', 0, 0, DATETIME('now')),
-    ('post2', '2', 'Conteúdo do segundo post', 0, 0, DATETIME('now'));
-
 
 SELECT * FROM posts;
 
